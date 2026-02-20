@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIANMO-SHOES | Promociones</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        /* Encabezado Principal */
+        header {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 15px;
+        }
+        header blockquote {
+            font-style: italic;
+            color: #888;
+            margin-top: 20px;
+            border: none;
+        }
+
+        /* Menú de Navegación */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #000;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        /* Contenedor de Contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* TABLA DE PRODUCTOS (GRILLA) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-size: 1.1em;
+            margin: 10px 0;
+            text-transform: uppercase;
+            color: #333;
+        }
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d35400;
+        }
+
+        /* Sección de Información Adicional */
+        .details-section {
+            background: #fcfcfc;
+            padding: 40px;
+            margin-top: 60px;
+            border-radius: 10px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .info-table th, .info-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Link de Acceso */
+        .social-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Pie de Página */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-content p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>VIANMO-SHOES</h1>
+        <p>Tu sucursal favorita sin bajarte de la cama 😉</p>
+        <blockquote>"El mundo es tu lienzo. Camínalo con el estilo de VIANMO."</blockquote>
+    </header>
+
+    <nav>
+        <a href="#">Promociones</a>
+        <a href="#">Damas</a>
+        <a href="#">Caballeros</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="intro-text">
+            <h2>Catálogo de Promociones</h2>
+            <p>Descubre nuestra selección exclusiva de zapatillas con precios especiales. Calidad y tendencia a un solo clic.</p>
+        </div>
+
+       <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="New balance 530.jpeg" alt="New Balance 530">
+                <h3>NEW BALANCE 530</h3>
+                <p class="price">$99.95 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="Adidas Samba White.jpeg" alt="Adidas Samba">
+                <h3>ADIDAS SAMBA WHITE</h3>
+                <p class="price">$100.28 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="nike m2k tekno.jpeg" alt="Nike M2K Tekno">
+                <h3>NIKE M2K TEKNO</h3>
+                <p class="price">$101.33 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="adidas samba og blue.jpeg" alt="Adidas Samba Blue">
+                <h3>ADIDAS SAMBA OG BLUE</h3>
+                <p class="price">$121.90 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="adidas samba black.jpeg" alt="Adidas Samba marine">
+                <h3>ADIDAS SAMBA BLUE</h3>
+                <p class="price">$117.80 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="vans old skool 1.jpeg" alt="Vans 1">
+                <h3>VANS OLD SKOOL PRO</h3>
+                <p class="price">$73.50 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="vans old skool classic.jpeg" alt="Vans Classic">
+                <h3>VANS OLD SKOOL CLASSIC</h3>
+                <p class="price">$63.10 USD</p>
+            </div>
+
+            <div class="product-card">
+                <img src="vans old skool b2.jpeg" alt="Vans B2">
+                <h3>VANS OLD SKOOL B2</h3>
+                <p class="price">$73.10 USD</p>
+            </div>
+
+        </div>
+
+        <div class="details-section">
+            <h3>Información de Compra</h3>
+            <table class="info-table">
+                <tr>
+                    <th>Servicio</th>
+                    <th>Detalle</th>
+                </tr>
+                <tr>
+                    <td>Envíos</td>
+                    <td>Todo Panamá y envíos internacionales.</td>
+                </tr>
+                <tr>
+                    <td>Pagos</td>
+                    <td>Yappy, Transferencia y Tarjeta.</td>
+                </tr>
+            </table>
+
+            <h3>Beneficios Vianmo</h3>
+            <ul>
+                <li>Catálogo actualizado semanalmente.</li>
+                <li>Atención personalizada 24/7.</li>
+                <li>Empaque premium en todas tus compras.</li>
+            </ul>
+
+            <a href="https://www.instagram.com/p_alanis03" class="social-link" target="_blank">Visitar Instagram Oficial 📱</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>VIANMO-SHOES CONTACTOS</strong></p>
+            <p>📧 vianmoshoes.pa@gmail.com</p>
+            <p>📞 +507 456-4567</p>
+            <p>📍 Calle 70 este San Francisco, Ciudad de Panamá.</p>
+            <p style="margin-top: 20px; color: #666;">&copy; 2026 VIANMO-SHOES. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

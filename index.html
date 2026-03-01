@@ -149,6 +149,44 @@
             margin: 5px 0;
             font-size: 0.9em;
         }
+
+/* ====== CARRITO DE COMPRAS ====== */
+#cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+#cart-modal {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #fff;
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.cart-item {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+#cart-total {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+    text-align: right;
+}
     </style>
 </head>
 <body>
@@ -165,6 +203,10 @@
         <a href="#">Caballeros</a>
     </nav>
 
+<div id="cart">
+    🛒 Carrito (<span id="cart-count">0</span>)
+</div>
+
     <div class="container">
         
         <div class="intro-text">
@@ -178,48 +220,79 @@
                 <img src="New balance 530.jpeg" alt="New Balance 530">
                 <h3>NEW BALANCE 530</h3>
                 <p class="price">$99.95 USD</p>
+ <button onclick="addToCart('NEW BALANCE 530', 99.95)">
+        Agregar al carrito
+    </button>
             </div>
 
             <div class="product-card">
                 <img src="Adidas Samba White.jpeg" alt="Adidas Samba">
                 <h3>ADIDAS SAMBA WHITE</h3>
                 <p class="price">$100.28 USD</p>
+ <button onclick="addToCart('ADIDAS SAMBA WHITE', 100.28)">
+        Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="nike m2k tekno.jpeg" alt="Nike M2K Tekno">
                 <h3>NIKE M2K TEKNO</h3>
                 <p class="price">$101.33 USD</p>
+<button onclick="addToCart('NIKE M2K TEKNO', 101.33)">
+        Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="adidas samba og blue.jpeg" alt="Adidas Samba Blue">
                 <h3>ADIDAS SAMBA OG BLUE</h3>
                 <p class="price">$121.90 USD</p>
+<button onclick="addToCart('ADIDAS SAMBA OG BLUE', 121.90)">
+        Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="adidas samba black.jpeg" alt="Adidas Samba marine">
                 <h3>ADIDAS SAMBA BLUE</h3>
                 <p class="price">$117.80 USD</p>
+<button onclick="addToCart('ADIDAS SAMBA BLUE', 117.80)">
+        Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="vans old skool 1.jpeg" alt="Vans 1">
                 <h3>VANS OLD SKOOL PRO</h3>
                 <p class="price">$73.50 USD</p>
+<button onclick="addToCart('VANS OLD SKOOL PRO', 73.50)">
+        Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="vans old skool classic.jpeg" alt="Vans Classic">
                 <h3>VANS OLD SKOOL CLASSIC</h3>
                 <p class="price">$63.10 USD</p>
+<button onclick="addToCart('VANS OLD SKOOL CLASSIC', 63.10)">
+       Agregar al carrito
+    </button>
+
             </div>
 
             <div class="product-card">
                 <img src="vans old skool b2.jpeg" alt="Vans B2">
                 <h3>VANS OLD SKOOL B2</h3>
                 <p class="price">$73.10 USD</p>
+<button onclick="addToCart('VANS OLD SKOOL B2', 73.10)">
+        Agregar al carrito
+    </button>
+
             </div>
 
         </div>
@@ -261,6 +334,64 @@
             <p style="margin-top: 20px; color: #666;">&copy; 2026 VIANMO-SHOES. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+<div id="cart-modal">
+    <h3>Carrito de compras</h3>
+
+    <div id="cart-items"></div>
+
+    <div id="cart-total">
+        <strong>Total: $<span id="total">0</span></strong>
+    </div>
+</div>
+
+<script>
+    let cart = [];
+    let cartCount = 0;
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        cartCount++;
+        document.getElementById("cart-count").innerText = cartCount;
+        renderCart();
+    }
+
+    function renderCart() {
+        const cartItems = document.getElementById("cart-items");
+        const totalSpan = document.getElementById("total");
+
+        cartItems.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "cart-item";
+
+            div.innerHTML = `
+                ${item.name} - $${item.price}
+                <button onclick="removeFromCart(${index})">❌</button>
+            `;
+
+            cartItems.appendChild(div);
+            total += item.price;
+        });
+
+        totalSpan.innerText = total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        cartCount--;
+        document.getElementById("cart-count").innerText = cartCount;
+        renderCart();
+    }
+
+    document.getElementById("cart").onclick = function () {
+        const modal = document.getElementById("cart-modal");
+        modal.style.display =
+            modal.style.display === "block" ? "none" : "block";
+    };
+</script>
 
 </body>
 </html>
